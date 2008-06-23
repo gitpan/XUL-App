@@ -1,5 +1,8 @@
 Change Log for XUL::App
 
+0.02 Jun 23, 2008
+* added missing dependencies to Makefile.PL.
+
 0.01 Jun 22, 2008
 * initial CPAN release.
 

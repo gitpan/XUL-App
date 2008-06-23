@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base qw/ Class::Data::Inheritable /;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 __PACKAGE__->mk_classdata('FILES' => {});
 
@@ -19,7 +19,7 @@ XUL::App - Nifty XUL apps in a XUL::App
 
 =head1 VERSION
 
-This document describes XUL::App 0.01 released on Jun 22, 2008.
+This document describes XUL::App 0.02 released on Jun 23, 2008.
 
 =head1 SYNOPSIS
 
@@ -31,7 +31,7 @@ This document describes XUL::App 0.01 released on Jun 22, 2008.
 
     # Edit lib/YSearchAll/App.pm to add the following lines:
     package YSearchAll::App;
-    our $VERSION = '0.01';
+    our $VERSION = '0.02';
 
     use XUL::App::Schema;
     use XUL::App schema {
@@ -49,9 +49,9 @@ This document describes XUL::App 0.01 released on Jun 22, 2008.
 
 =head1 DESCRIPTION
 
-XUL::App is a nifty Firefox extension development framework based on Perl. It has a lot of parallels with Jifty.
+XUL::App is a nifty Firefox extension development framework based on Perl. It has a lot of parallels with Jifty. In particular, this framework allows you to build real-world modern Firefox extensions using Perl. But the resulting XPI installation file is completely portable and contains I<0> Perl.
 
-This framework has the following highlights:
+This framework has the following cool features:
 
 =over
 
@@ -69,21 +69,36 @@ Use 100% Perl to specify XUL layout via L<Template::Declare>, no XML pain.
 
 =item *
 
+Automatic extension registration/unregistration for easy debugging. And no more frustration from Firefox's XUL/ext cache. (XUL::App will ensure the developer version defeats Firefox's cache.)
+
+=item *
+
+Transparent jar-based XPI bundling, no F<chrome.manifest>, L<install.rdf>, and zip panic. XUL::App generates all of them for you according to your (declarative) Perl code.
+
+=item *
+
 The resulting XPI file contains B<0%> Perl and could run everywhere (Win32, Mac, Linux, and etc). It's a compiler-style framework.
+
+=item *
+
+I18N support via the L<Locale::Maketext::Lexicon> (same as L<Jifty>, but
+actually emulated by XUL's native I18N mechanism).
 
 =back
 
-Currently the module is in alpha stage and we're in severe lack of documentation. But you can get a lot of information from the slides that I used in the talk:
+Currently the module is still in B<alpha> stage and we're in severe lack of documentation and tests. (Although a real-world fully-fledged Firefox extension named SearchAll (L<https://addons.mozilla.org/en-US/firefox/addon/5712>) is already developed atop it.
 
-    http://agentzh.org/misc/slides/xulapp/xulapp.xul  (a JS-enabled Firefox is required to view these slides)
+But you can get a lot of information from the slides that I used in the talk:
+
+L<http://agentzh.org/misc/slides/xulapp/xulapp.xul>  (a JS-enabled Firefox is required to view these slides)
 
 If you're having problems in displaying the slides given above, please try out the PowerPoint (PPT) version below:
 
-    http://agentzh.org/misc/slides/xulapp.ppt
+L<http://agentzh.org/misc/slides/xulapp.ppt>
 
 or the PDF version:
 
-    http://agentzh.org/misc/slides/xulapp.pdf
+L<http://agentzh.org/misc/slides/xulapp.pdf>
 
 =head1 CAVEATS
 
@@ -109,7 +124,7 @@ Only Firefox 2.0.0.* and Firefox 3.0 on Linux has been tested against this frame
 
 You can always get the latest source of XUL::App from the following SVN repository:
 
-    http://svn.openfoundry.org/xulapp/trunk/
+L<http://svn.openfoundry.org/xulapp/trunk/>
 
 There's very little POD docs, please read README and the slides for details.
 
@@ -123,19 +138,53 @@ I really need help in improving this module's docs, tests, and implementation. I
 
 SearchAll is a real-world Firefox extension that is built upon XUL::App, which can serve as a big demo for the usage of the framework:
 
-    L<http://svn.openfoundry.org/searchall/trunk/>
+L<http://svn.openfoundry.org/searchall/trunk/>
+
+And it's already on the mozilla official site AMO:
+
+L<https://addons.mozilla.org/en-US/firefox/addon/5712>
 
 =item *
 
 ExportReader: A Firefox extension to dump entries from Google Reader to JSON:
 
-    L<http://svn.openfoundry.org/xulapp/trunk/demo/ExportReader/>
+L<http://svn.openfoundry.org/xulapp/trunk/demo/ExportReader/>
+
+This extension only costed me about 10 lines of Perl and 20 lines of JavaScript, in addition to a few shell commands. The process is easy and enjoyable.
+
+Because it's mostly for personal use, The usage of this addon deserves some explanation though:
+
+=over
+
+=item 1.
+
+Click the XPI file from your Firefox browser:
+
+=item 2.
+
+Enter the following chrome URL in your Firefox's address bar:
+
+L<chrome://exportreader/content/exportreader.xul>
+
+Then you will see the main UI of this extension.
+
+=item 3.
+
+Login to your Google Reader and then click the site on the left-hand-side menu whose entries are what you want to export, say, "chromatic's Journal". Ensure that the "Expanded View" is used in the right-hand-side on the Google Reader page.
+
+=item 4.
+
+Click the "Extract!" button on the right-upper corner. Then you'll see an alert dialog saying how many entries were found. Click "OK" then the corresponding JSON string will be in the right-most textbox which is ready for copy-and-paste.
+
+Note that, by defaul, Google Reader lazily loads just the top 5 entries or so. So in order to export all the entries in the subscribed site, say, "chromatic's Journal", you'll have to scroll down the Reader's Expanded View and force it to retrieve more entries.
+
+=back
 
 =item *
 
 A helloworld sample extension is given in my XUL::App talk's slides:
 
-    L<http://agentzh.org/misc/slides/xulapp.pdf>
+L<http://agentzh.org/misc/slides/xulapp.pdf>
 
 =back
 
@@ -151,7 +200,7 @@ Sadly XUL::App does not run on Win32 yet. I've only tested it on Ubuntu Linux so
 
 =head1 SEE ALSO
 
-L<Jifty>.
+L<xulapp>, L<Locale::Maketext::Lexicon>, <Template::Declare>, L<Jifty>.
 
 =head1 AUTHOR
 
@@ -164,5 +213,5 @@ Copyright 2007 by Yahoo! China Inc. (http://cn.yahoo.com)
 =head1 LICENSE
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+it under the same terms as Perl itself, either Artistic or GPL.
 

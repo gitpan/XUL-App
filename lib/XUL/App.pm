@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base qw/ Class::Data::Inheritable /;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 __PACKAGE__->mk_classdata('FILES' => {});
 
@@ -19,7 +19,7 @@ XUL::App - Nifty XUL apps in a XUL::App
 
 =head1 VERSION
 
-This document describes XUL::App 0.02 released on Jun 23, 2008.
+This document describes XUL::App 0.03 released on Jun 23, 2008.
 
 =head1 SYNOPSIS
 
@@ -31,7 +31,7 @@ This document describes XUL::App 0.02 released on Jun 23, 2008.
 
     # Edit lib/YSearchAll/App.pm to add the following lines:
     package YSearchAll::App;
-    our $VERSION = '0.02';
+    our $VERSION = '0.03';
 
     use XUL::App::Schema;
     use XUL::App schema {
@@ -159,6 +159,10 @@ Because it's mostly for personal use, The usage of this addon deserves some expl
 =item 1.
 
 Click the XPI file from your Firefox browser:
+
+L<http://svn.openfoundry.org/xulapp/trunk/demo/ExportReader/exportreader.xpi>
+
+After installation, please remember to restart to browser.
 
 =item 2.
 

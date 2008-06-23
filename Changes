@@ -1,5 +1,8 @@
 Change Log for XUL::App
 
+0.04 Jun 23, 2008
+* Updated the POD a bit.
+
 0.03 Jun 23, 2008
 * Added a link to the ExportReader sample Firefox extension's XPI to the POD.
 

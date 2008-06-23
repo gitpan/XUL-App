@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base qw/ Class::Data::Inheritable /;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 __PACKAGE__->mk_classdata('FILES' => {});
 
@@ -19,7 +19,7 @@ XUL::App - Nifty XUL apps in a XUL::App
 
 =head1 VERSION
 
-This document describes XUL::App 0.03 released on Jun 23, 2008.
+This document describes XUL::App 0.04 released on Jun 23, 2008.
 
 =head1 SYNOPSIS
 
@@ -31,7 +31,7 @@ This document describes XUL::App 0.03 released on Jun 23, 2008.
 
     # Edit lib/YSearchAll/App.pm to add the following lines:
     package YSearchAll::App;
-    our $VERSION = '0.03';
+    our $VERSION = '0.04';
 
     use XUL::App::Schema;
     use XUL::App schema {
@@ -49,7 +49,7 @@ This document describes XUL::App 0.03 released on Jun 23, 2008.
 
 =head1 DESCRIPTION
 
-XUL::App is a nifty Firefox extension development framework based on Perl. It has a lot of parallels with Jifty. In particular, this framework allows you to build real-world modern Firefox extensions using Perl. But the resulting XPI installation file is completely portable and contains I<0> Perl.
+XUL::App is a nifty Firefox extension development framework based on Perl. It has a lot of parallels with L<Jifty>. In particular, this framework allows you to build real-world modern Firefox extensions using Perl. But the resulting XPI installation file is completely portable and contains I<0> Perl.
 
 This framework has the following cool features:
 
@@ -57,7 +57,7 @@ This framework has the following cool features:
 
 =item *
 
-Jifty love on the Firefox extension development land.
+L<Jifty> love on the Firefox extension development land.
 
 =item *
 
@@ -202,20 +202,18 @@ L<http://agentzh.org/misc/slides/xulapp.pdf>
 
 Sadly XUL::App does not run on Win32 yet. I've only tested it on Ubuntu Linux so far. If you have any problems or would love to help, please let me know ;)
 
-=head1 SEE ALSO
-
-L<xulapp>, L<Locale::Maketext::Lexicon>, <Template::Declare>, L<Jifty>.
-
 =head1 AUTHOR
 
 Agent Zhang <agentzh@yahoo.cn>
 
-=head1 COPYRIGHT
+=head1 COPYRIGHT AND LICENSE
 
-Copyright 2007 by Yahoo! China Inc. (http://cn.yahoo.com)
-
-=head1 LICENSE
+Copyright 2007, 2008 by Yahoo! China EEEE Works, Alibaba Inc. (L<http://www.eeeeworks.org>)
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Artistic or GPL.
+
+=head1 SEE ALSO
+
+L<xulapp>, L<Locale::Maketext::Lexicon>, L<Template::Declare>, L<Jifty>.
 

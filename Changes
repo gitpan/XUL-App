@@ -1,5 +1,8 @@
 Change Log for XUL::App
 
+0.06 Jun 24, 2008
+* Fixed various typos in the POD.
+
 0.05 Jun 24, 2008
 * Fixed a typo in the boiler-plate for XXX::App where XXX is the user app's name.
 * Added a display_name attribute to XUL::App::Schema

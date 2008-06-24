@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base qw/ Class::Data::Inheritable /;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 __PACKAGE__->mk_classdata('FILES' => {});
 
@@ -19,7 +19,7 @@ XUL::App - Nifty XUL apps in a XUL::App
 
 =head1 VERSION
 
-This document describes XUL::App 0.05 released on Jun 24, 2008.
+This document describes XUL::App 0.06 released on Jun 24, 2008.
 
 =head1 SYNOPSIS
 
@@ -31,7 +31,7 @@ This document describes XUL::App 0.05 released on Jun 24, 2008.
 
     # Edit lib/YSearchAll/App.pm to add the following lines:
     package YSearchAll::App;
-    our $VERSION = '0.05';
+    our $VERSION = '0.06';
 
     use XUL::App::Schema;
     use XUL::App schema {
@@ -42,6 +42,20 @@ This document describes XUL::App 0.05 released on Jun 24, 2008.
     +
         xpifile 'ysearchall.xpi' =>
             name is 'YSearchAll',
+            id is 'ysearchall@agentz.agentz-office',
+            version is '0.0.1',
+            targets {
+                Firefox => ['2.0' => '3.0.*'],  # FIXME
+                Mozilla => ['1.5' => '1.8'],  # FIXME
+            },
+            creator is 'The YSearchAll development team',
+            developers are ['agentz'],
+            contributors are [],
+            homepageURL is 'http://searchall.agentz.org', # FIXME
+            iconURL is '',  # like 'chrome://helloworld/content/logo.png'
+            updateURL is ''; # This should not set for AMO extensions.
+    };
+    1;
 
     # Add and edit js/ysearchall.js manually
     $ xulapp overlay -p dev11
@@ -51,7 +65,7 @@ This document describes XUL::App 0.05 released on Jun 24, 2008.
 
 XUL::App is a nifty Firefox extension development framework based on Perl. It has a lot of parallels with L<Jifty>. In particular, this framework allows you to build real-world modern Firefox extensions using Perl. But the resulting XPI installation file is completely portable and contains I<0> Perl.
 
-This framework has the following cool features:
+This framework has the following highlights:
 
 =over
 
@@ -73,7 +87,7 @@ Automatic extension registration/unregistration for easy debugging. And no more 
 
 =item *
 
-Transparent jar-based XPI bundling, no F<chrome.manifest>, L<install.rdf>, and zip panic. XUL::App generates all of them for you according to your (declarative) Perl code.
+Transparent C<jar>-based XPI bundling, no F<chrome.manifest>, L<install.rdf>, and zip panic. XUL::App generates all of them for you according to your (declarative) Perl code.
 
 =item *
 
@@ -81,14 +95,14 @@ The resulting XPI file contains B<0%> Perl and could run everywhere (Win32, Mac,
 
 =item *
 
-I18N support via the L<Locale::Maketext::Lexicon> (same as L<Jifty>, but
+I18N support via the L<Locale::Maketext::Lexicon> module (same as L<Jifty>, but
 actually emulated by XUL's native I18N mechanism).
 
 =back
 
 Currently the module is still in B<alpha> stage and we're in severe lack of documentation and tests. (Although a real-world fully-fledged Firefox extension named SearchAll (L<https://addons.mozilla.org/en-US/firefox/addon/5712>) is already developed atop it.
 
-But you can get a lot of information from the slides that I used in the talk:
+You can get a lot of information from the slides that I used in the talk:
 
 L<http://agentzh.org/misc/slides/xulapp/xulapp.xul>  (a JS-enabled Firefox is required to view these slides)
 

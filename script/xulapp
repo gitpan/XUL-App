@@ -675,10 +675,10 @@ xulapp - frontend script for XUL::App
     # setup the components
     xulapp setup --profile dev
 
-    # register the (debuggin) chrome to ~/.mozilla/firefox/*/extensions.ini
+    # register the (debugging) chrome to ~/.mozilla/firefox/*/extensions.ini
     xulapp register --profile dev
 
-    # unregister the (debuggin) chrome from ~/.mozilla/firefox/*/extensions.ini
+    # unregister the (debugging) chrome from ~/.mozilla/firefox/*/extensions.ini
     xulapp unregister  --profile dev
 
     # launch a ff window loading searchall.xul :
@@ -718,7 +718,7 @@ xulapp - frontend script for XUL::App
 
 More information about its usage can be found in my XUL::App talk's slides:
 
-    L<http://agentzh.org/misc/slides/xulapp.pdf>
+L<http://agentzh.org/misc/slides/xulapp.pdf>
 
 Yes, I really need to put more documentation here :P I'm working on it :)
 
@@ -728,7 +728,7 @@ L<XUL::App>
 
 =head1 AUTHOR
 
-Agent Zhang E<lt>agentzh@yahoo.cn<gt>
+Agent Zhang C<< <agentzh@yahoo.cn> >>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -7,9 +7,9 @@ use File::Slurp;
 
 use base 'Class::Accessor::Fast';
 __PACKAGE__->mk_accessors(qw{
-    id name description version targets
+    id name display_name description version targets
     creator contributors developers
-    homepageURL updateURL iconURL
+    homepageURL updateURL iconURL aboutURL
 });
 
 sub new {

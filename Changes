@@ -1,5 +1,12 @@
 Change Log for XUL::App
 
+0.05 Jun 24, 2008
+* Fixed a typo in the boiler-plate for XXX::App where XXX is the user app's name.
+* Added a display_name attribute to XUL::App::Schema
+* Added a new demo YahooFavorites (http://help.cn.yahoo.com/answerpage.html?product=myweb).
+* Added a new demo HelloWorld.
+* Added a new script xml2td for converting XML files to Perl code using Template::Declare.
+
 0.04 Jun 23, 2008
 * Updated the POD a bit.
 

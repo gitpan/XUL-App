@@ -26,6 +26,7 @@ requires            ('Sys::Hostname');
 no_index( directory => qw< t inc doc share demo > );
 
 install_script      ('script/xulapp');
+install_script      ('script/xml2td');
 install_share;
 
 auto_install();

@@ -31,7 +31,7 @@ template main => sub {
         Description {
             attr { about => 'urn:mozilla:install-manifest' }
             em::id { $xpifile->id }
-            em::name { $xpifile->name }
+            em::name { $xpifile->display_name || $xpifile->name }
             em::description { $xpifile->description }
             em::version { $xpifile->version }
             em::creator { $xpifile->creator };

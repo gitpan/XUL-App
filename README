@@ -2,7 +2,7 @@ NAME
     XUL::App - Nifty XUL apps in a XUL::App
 
 VERSION
-    This document describes XUL::App 0.06 released on Jun 24, 2008.
+    This document describes XUL::App 0.07 released on July 11, 2008.
 
 SYNOPSIS
         $ xulapp app --name YSearchAll
@@ -13,7 +13,7 @@ SYNOPSIS
 
         # Edit lib/YSearchAll/App.pm to add the following lines:
         package YSearchAll::App;
-        our $VERSION = '0.06';
+        our $VERSION = '0.07';
 
         use XUL::App::Schema;
         use XUL::App schema {

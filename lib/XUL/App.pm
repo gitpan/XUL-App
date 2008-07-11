@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base qw/ Class::Data::Inheritable /;
 
-our $VERSION = '0.06';
+our $VERSION = '0.07';
 
 __PACKAGE__->mk_classdata('FILES' => {});
 
@@ -19,7 +19,7 @@ XUL::App - Nifty XUL apps in a XUL::App
 
 =head1 VERSION
 
-This document describes XUL::App 0.06 released on Jun 24, 2008.
+This document describes XUL::App 0.07 released on July 11, 2008.
 
 =head1 SYNOPSIS
 
@@ -31,7 +31,7 @@ This document describes XUL::App 0.06 released on Jun 24, 2008.
 
     # Edit lib/YSearchAll/App.pm to add the following lines:
     package YSearchAll::App;
-    our $VERSION = '0.06';
+    our $VERSION = '0.07';
 
     use XUL::App::Schema;
     use XUL::App schema {

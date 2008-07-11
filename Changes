@@ -1,5 +1,8 @@
 Change Log for XUL::App
 
+0.07 Jul 11, 2008
+* Fixed a syntax error in JSON.js regarding Firefox 3.
+
 0.06 Jun 24, 2008
 * Fixed various typos in the POD.
 

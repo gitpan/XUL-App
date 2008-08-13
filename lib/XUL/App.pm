@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use base qw/ Class::Data::Inheritable /;
 
-our $VERSION = '0.07';
+our $VERSION = '0.09';
 
 __PACKAGE__->mk_classdata('FILES' => {});
 
@@ -19,7 +19,7 @@ XUL::App - Nifty XUL apps in a XUL::App
 
 =head1 VERSION
 
-This document describes XUL::App 0.07 released on July 11, 2008.
+This document describes XUL::App 0.09 released on August 13, 2008.
 
 =head1 SYNOPSIS
 
@@ -30,8 +30,7 @@ This document describes XUL::App 0.07 released on July 11, 2008.
     $ xulapp view --name Overlay --type overlay
 
     # Edit lib/YSearchAll/App.pm to add the following lines:
-    package YSearchAll::App;
-    our $VERSION = '0.07';
+    package YSearchAll::App; our $VERSION = '0.09';
 
     use XUL::App::Schema;
     use XUL::App schema {
@@ -75,11 +74,11 @@ L<Jifty> love on the Firefox extension development land.
 
 =item *
 
-Building a realworld Firefox extension can be much easier than GreaseMonkey hacks.
+Building a realworld Firefox extension can be even much easier than GreaseMonkey hacks.
 
 =item *
 
-Use 100% Perl to specify XUL layout via L<Template::Declare>, no XML pain.
+Use B<100%> Perl to specify XUL layout via L<Template::Declare>, no XML pain.
 
 =item *
 
@@ -102,7 +101,7 @@ actually emulated by XUL's native I18N mechanism).
 
 Currently the module is still in B<alpha> stage and we're in severe lack of documentation and tests. (Although a real-world fully-fledged Firefox extension named SearchAll (L<https://addons.mozilla.org/en-US/firefox/addon/5712>) is already developed atop it.
 
-You can get a lot of information from the slides that I used in the talk:
+You can get a lot of information from the slides that I used in the following talk:
 
 L<http://agentzh.org/misc/slides/xulapp/xulapp.xul>  (a JS-enabled Firefox is required to view these slides)
 
@@ -120,15 +119,15 @@ L<http://agentzh.org/misc/slides/xulapp.pdf>
 
 =item *
 
-Because XUL::App wites to your ~/.mozilla/firefox directory directly, it's always recommended to backup that directory to somewhere else to prevent unexpected corruption occurring to your Firefox profiles.
+Because XUL::App writes to your ~/.mozilla/firefox directory directly, it's always recommended to backup that directory to somewhere else to prevent unexpected corruption occurring to your Firefox profiles.
 
 =item *
 
-After applying Firefox updates or using a new Firefox profile, it's required to restart Firefox one more time to load your extensions. So please don't fire bug report regarding that.
+After applying Firefox updates or switching to a new Firefox profile, it's required to restart your Firefox one more time so as to load your extensions. So please don't fire bug report for this.
 
 =item *
 
-Only Firefox 2.0.0.* and Firefox 3.0 on Linux has been tested against this framework. So you're warned when you're going to do XUL::App hacking on other platforms like Windows.
+Only Firefox 2.0.0.* and Firefox 3.0 on Linux has been tested against this framework. So you're warned when you're going to do XUL::App hacking on other platforms, such as Windows.
 
 (BTW, I'm very willing to apply patches for other platforms.)
 
@@ -139,8 +138,6 @@ Only Firefox 2.0.0.* and Firefox 3.0 on Linux has been tested against this frame
 You can always get the latest source of XUL::App from the following SVN repository:
 
 L<http://svn.openfoundry.org/xulapp/trunk/>
-
-There's very little POD docs, please read README and the slides for details.
 
 I really need help in improving this module's docs, tests, and implementation. If you find this thing useful and feel like contributing to it, please write to me and get a commit bit! ;)
 
@@ -176,7 +173,7 @@ Click the XPI file from your Firefox browser:
 
 L<http://svn.openfoundry.org/xulapp/trunk/demo/ExportReader/exportreader.xpi>
 
-After installation, please remember to restart to browser.
+After installation, please remember to restart the browser.
 
 =item 2.
 

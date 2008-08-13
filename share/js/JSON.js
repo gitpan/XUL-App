@@ -1,4 +1,4 @@
-var JSON = (function () {
+var genJSON = function () {
     var m = {
             '\b': '\\b',
             '\t': '\\t',
@@ -99,5 +99,9 @@ var JSON = (function () {
             }
         }
     };
-})();
+};
+
+var JSON = genJSON();
+
+/* Copyright (c) 2005 JSON.org */
 

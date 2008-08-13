@@ -1,5 +1,11 @@
 Change Log for XUL::App
 
+0.09 Aug 13, 2008
+* fixed the extension registration issue.
+
+0.08 Jul 11, 2008
+* Fixed a syntax error in JSON.js regarding Firefox 3.
+
 0.07 Jul 11, 2008
 * Fixed a syntax error in JSON.js regarding Firefox 3.
 

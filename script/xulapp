@@ -4,6 +4,7 @@
 #use lib 'tmplib/lib';
 use strict;
 use warnings;
+
 #use Smart::Comments;
 #use Smart::Comments '####';
 use Cwd ();
@@ -567,7 +568,7 @@ sub register_ext {
         die "Can't open $metafile for reading: $!";
     my $state = 'init';
     my ($buf, $c);
-    $c = 0;
+    $c = -1;
     my $write_back = 1;
     while (<$in>) {
         s/\r\n/\n/g;
@@ -575,16 +576,19 @@ sub register_ext {
             $state = 'begin';
         } elsif ($state eq 'begin') {
             if (/^\s*\[\w+\]\s*$/) {
+                $c++;
                 $buf .= "Extension$c="
                     . $manifest
                     . "\r\n";
-                $c++;
                 $state = 'end';
-            } elsif (/^\s*Extension(\d+)\s*=\s*([^\r]*)\r?$/i) {
+            } elsif (/^\s*Extension(\d+)\s*=\s*([^\r\n]*)\r?$/i) {
                 if ($2 eq $manifest) {
                     warn "Great! $manifest already registered.\n";
                     $write_back = 0;
                     last;
+                } else {
+                    ### $2
+                    ### $manifest
                 }
                 $c = $1;
             }
